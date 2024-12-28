@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../image/download.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>AssingMent-js</title>
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script defer src="../JavaScript/main.js"></script>
+    <style>
+     /* .card {
+      background: rgba(255, 255, 255, 0.1);
+      width: 100%;
+      max-width: 400px;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid #2575fc;
+      transition: 0.3s;
+    }
+    .profile-pic:hover {
+      opacity: 0.8;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-label {
+      background: linear-gradient(to right, #0078d4, #00c6ff);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .form-control {
+      background: rgba(255, 255, 255, 0.1);
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #2575fc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #0056b3;
+    }
+    .alert {
+      display: none;
+      margin-top: 15px;
+      padding: 10px;
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      border-radius: 5px;
+      font-size: 14px;
+    } */
+    </style>
+</head>
+<body>
+   
+    
+
+    <div class="flex" id="top">
+        <header>Somali Flag Designe</header><br>
+    </div>
+
+    <!-- Navbar with burger menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+        <ul class="nav-links">
+            <li><a href="chapters.html" id="main">Chapters</a></li>
+            <li><a href="ExamLap.html">Lab<i class="fa-solid fa-laptop-code"></i></a></li>
+            <li><a href="AssingMent.html">Assignment</a></li>
+            <li id="chapter-project">
+                <a href="project-One.html" id="Project">Project<i class="fa-solid fa-angle-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="project-One.html" style="color: black;">Project One</a></li>
+                </ul>
+            </li>
+            <li><a href="about-me.html">About Us</a></li>
+            <li><a href="about-me.html">log in</a></li>
+            <li><a href="help.html" >Help page</a></li>
+        </ul>
+        <!-- Burger icon -->
+        <div class="burger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav><br><br>
+
+    <center>
+    <div class="card" id="body">
+        <div class="text-center mb-4" style="text-align: center; margin-bottom: 20px;">
+          <label for="profile-pic-input">
+            <img src="../image/images.jpeg" width="60%" alt="Profile Picture" id="profile-pic" class="profile-pic">
+          </label>
+          <input type="file" id="profile-pic-input" accept="image/*" style="display: none;">
+        </div>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+          </div>
+          <button type="submit" class="btn">Login</button>
+        </form>
+        <div class="alert" role="alert">
+          <i style="color: green; margin-right: 5px;">✔</i> Your login was successful!
+        </div>
+      </div>
+
+    </center>
+    <script>
+        const profilePic = document.getElementById('profile-pic');
+        const profilePicInput = document.getElementById('profile-pic-input');
+        const loginForm = document.getElementById('login-form');
+        const alertBox = document.querySelector('.alert');
+    
+        profilePicInput.addEventListener('change', (event) => {
+          const file = event.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = () => {
+              profilePic.src = reader.result;
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+    
+        loginForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          alertBox.style.display = 'block';
+          alertBox.innerHTML = '<i style="color: green; margin-right: 5px;">✔</i> Your login was successful!';
+          setTimeout(() => {
+            alertBox.style.display = 'none';
+            loginForm.reset();
+          }, 3000);
+        });
+      </script>
+
+</div> <br><br>
+
+<!-- menu -->
+<a href="index.html" class="back-to-menu">
+    <div class="icon-menu">
+        <i class="fa-duotone fa-solid fa-arrow-left"></i>
+    </div>
+  </a><br>
+<!-- menu -->
+<a href="#top" class="back-to-top">
+    <div class="icon">
+      <i class="fa-solid fa-arrow-up"></i>
+    </div>
+  </a><br>
+
+  <script src="../bootstrap.bundle.min.js"></script>
+    <footer class="container-footer">
+        <h3 class="js">AssingMent</h3><hr>
+        <p>© <span>Copyright</span> <strong class="sitename">Assingment</strong> <span>All Rights Reserved</span></p>   
+    </footer>
+</body>
+</html>
